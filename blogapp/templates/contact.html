@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Django's Blog -Contact{% endblock %}
+
+        {% block header %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({% static 'assets/img/contact-bg.jpg' %})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Contact Me</h1>
+                            <span class="subheading">Have questions? I have answers.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% endblock %}
+
+        {% block contents %}
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <strong>連絡を取りたいですか?
+                                以下のフォームに入力してメッセージを送信してください。
+                                できるだけ早くご連絡します。
+                        </strong>
+                        <div class="my-5">
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form method="POST">
+                                {% csrf_token %}
+
+                                {% for field in form %}
+                                <div class="form-floating">
+                                    <div class="form-group floating-label-group controls">
+                                        {{field.label_tag}}
+                                        {{field}}
+                                        <p></p>
+                                    </div>
+                                </div>    
+                                {% endfor %}
+
+                                <button type="submit"
+                                        class="btn btn-primary"
+                                        id='sendMessageButton'>Send</button>
+
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% endblock %}
+        
