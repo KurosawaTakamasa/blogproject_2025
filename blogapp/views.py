@@ -10,6 +10,9 @@ class IndexView(ListView):
     #参照するモデルを指定する
     queryset = BlogPost.objects.order_by('-posted_at')
 
+    #1ページに表示する件数
+    paginate_by = 4
+
 class BlogDetail(DetailView):
     
     #post.htmlを描画する
