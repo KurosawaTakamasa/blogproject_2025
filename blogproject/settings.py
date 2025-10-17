@@ -128,5 +128,5 @@ DEFAULT_FROM_EMAIL = 'ymg2565999@stu.o-hara.ac.jp'
 EMAIL_HOST = 'smtp-mail.outlook.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'ymg2565999@stu.o-hara.ac.jp'
-EMAIL_HOST_PASSWORD = 'Yamagata180509'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
